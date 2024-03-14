@@ -11,32 +11,67 @@ To create an application that uses GUI Components with Fonts and Colors using An
 Latest Version Android Studio
 
 ## ALGORITHM:
-
-Set up the project: Create a new Android project in your preferred IDE (Android Studio, IntelliJ IDEA, etc.).
-
-Design the layout: Design the layout of your application using XML in the res/layout directory. Include the GUI components such as TextView for displaying text, and Button for interaction.
-
-Define variables and constants: Define variables to hold the font size, text color, and references to GUI components in your MainActivity.java file.
-
-Initialize GUI components: In the onCreate() method of your MainActivity.java, initialize the GUI components by finding their views using findViewById().
-
-Set click listeners: Set click listeners for the buttons to handle user interactions.
-
-Implement font size functionality: In the click listener for the font size button, increment the font size by a predefined amount and set it to the TextView. If the font size exceeds a certain limit, reset it to the initial value.
-
-Implement color change functionality: In the click listener for the color change button, cycle through a predefined set of colors for the text in the TextView. Update the text color accordingly.
-
-Handle UI updates: After modifying the font size or text color, update the UI by setting the new font size or text color to the TextView.
-
-Testing: Test your application on different devices and screen sizes to ensure proper functionality and user experience.
-
+```
+Step 1: Open Android Studio and then click on File -> New -> New project.
+Step 2: Then type the Application name as HelloWorld and click Next.
+Step 3: Then select the Minimum SDK as shown below and click Next.
+Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+Step 5: Design layout in activity_main.xml
+Step 6: Display message give in MainActivity file.
+Step 7: Save and run the application.
+```
 
 ## PROGRAM:
-
 ```
-import androidx.appcompat.app.AppCompatActivity;
+/*
+Program to print the text “GUIcomponent”.
+Developed by: AKASH A
+Registeration Number :212221040010
+*/
+```
+#ACTIVITY_MAIN.XML
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="Hello World!"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Change font size"
+        android:textSize="25sp" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Change color"
+        android:textSize="25sp" />
+</LinearLayout>
+```
+
+#ACTIVITYMAIN.JAVA
+```
+package com.example.gui;
 
 import android.graphics.Color;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,7 +87,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final TextView t= (TextView) findViewById(R.id.textView);
-        Button b1= (Button) findViewById(R.id.button2);
+        Button b1= (Button) findViewById(R.id.button1);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +97,7 @@ public class MainActivity extends AppCompatActivity
                     font = 30;
             }
         });
-        Button b2= (Button) findViewById(R.id.button3);
+        Button b2= (Button) findViewById(R.id.button2);
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,13 +128,12 @@ public class MainActivity extends AppCompatActivity
         });
     }
 }
+```
 
 ## OUTPUT
+![3](https://github.com/21002624/GUI-components/assets/113762183/0fdd43f1-3938-4f08-a52c-57b79cba8087)
 
-![EXP 1](https://github.com/AjaysuryaS/GUI-components/assets/114158396/aae317ed-5c7a-4fc5-b176-bc6115f9a47e)
-
-
-
+![2](https://github.com/21002624/GUI-components/assets/113762183/84766609-cf44-49c5-99a9-cdeced2e668d)
 
 ## RESULT
 Thus a Simple Android Application that uses GUI Components with Fonts and Colors using Android Studio is developed and executed successfully.
